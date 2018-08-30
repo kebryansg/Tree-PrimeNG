@@ -2,15 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {TreeModule} from 'primeng/tree';
+import {TreeComponent} from './components/tree/tree.component';
+import {NodeService} from './services/node.service';
+import {HttpModule} from '@angular/http';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TreeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    TreeModule
   ],
-  providers: [],
+  providers: [
+    NodeService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
